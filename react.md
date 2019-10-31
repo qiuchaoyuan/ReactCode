@@ -53,6 +53,8 @@
 
 # React 第二次课
 ## 1. Redux
+    数据流向 state->component->action->state
+
     Redux
         combineReducers
             const reducers_arr = combineReducers({
@@ -73,8 +75,11 @@
             })(cmp1)
 
     1.actions的优化手段
+        把type都弄成一个文件，然后引入文件去引用，防止一方修改的时候出现错误
     2.store提取出来
+        ...
     3.多个reducer，combineReducers
+        每次提交action都会把该组件相关联的reducer都执行
 ## 2.React-router
     4.路由的基本使用
         npm install react-router-dom -S
@@ -90,3 +95,11 @@
     5.带参数的路由
         this.props.match.params
     6.路由的嵌套
+        <Router>
+            <div>
+                <Link to="/sport"></Link>
+                <Link to="/guoji"></Link>
+                <Route path="/sport" exact component="cmp2_1"></Route>
+                <Route path="/guoji" exact component="cmp2_2"></Route>
+            </div>
+        </Router>

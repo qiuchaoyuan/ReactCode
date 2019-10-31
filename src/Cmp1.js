@@ -21,16 +21,16 @@ class Cmp1 extends Component {
     render() {
         return (
             <div>
+                我是cmp1
                 {/* store里面的state和props糅合在一起，统一使用props管理，防止修改 */}
                 <div className="flex">
                     <Button type="primary" onClick={this.fn.bind(this)}>setName</Button>
-                    <p>{this.props.name}</p>
+                    <p>{this.props.reducer1.name}</p>
                 </div>
                 <div className="flex">
                     <Button type="primary" onClick={this.fn1.bind(this)}>setAge</Button>
-                    <p>{this.props.age}</p>
+                    <p>{this.props.reducer1.age}</p>
                 </div>
-
             </div>
         )
     }
@@ -41,7 +41,7 @@ const actions = {
     setName() {
         return {
             type: "set_name",
-            name: "zhangsan"
+            name: "石川"
         }
     },
     setAge() {
