@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Cmp1 from "./Cmp1"
 import Cmp2 from "./Cmp2"
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 function App() {
   return (

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // 获取connect的内容
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom"
 import { Button } from "antd"
 import 'antd/dist/antd.css';
 import './cmp1.css'
@@ -8,6 +9,7 @@ import './cmp1.css'
 class Cmp1 extends Component {
     constructor(...arg) {
         super(...arg)
+        console.log(this.props.history.a)
     }
 
     fn() {
@@ -54,4 +56,4 @@ const actions = {
 // 包装组件
 export default connect((state, props) => {
     return state;
-}, actions)(Cmp1)
+}, actions)(withRouter(Cmp1))

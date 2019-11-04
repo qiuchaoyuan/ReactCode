@@ -83,7 +83,9 @@
 ## 2.React-router
     4.路由的基本使用
         npm install react-router-dom -S
-        import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+        import {BrowserRouter as Router,Route,Link,withRouter} from 'react-router-dom'
+        withRouter(component);
+        console.log(this.props.history)
         <Router> 放在render，相当于vue的router-view
             <div>
                 <Link to="/"></Link>
@@ -103,3 +105,6 @@
                 <Route path="/guoji" exact component="cmp2_2"></Route>
             </div>
         </Router>
+    7.通过js跳转路由
+    
+    8.Dialog组件
