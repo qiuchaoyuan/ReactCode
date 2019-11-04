@@ -39,15 +39,20 @@
     子级找父级，同样不直接操作state，通过props拿到父级暴露的this
 
 ## 7.生命周期
-    componentDidMount
-    componentWillUpdate
+[链接]: https://www.jianshu.com/p/514fe21b9914 "React生命周期"
+    componentDidMount 组件已经挂载 在 render 之后调用
+    componentWillUpdate 组件将要更新
+    componentDidUpdate 组件已经更新
+        componentDidUpdate(old_props,old_state){}
+    componentWillUnmount 在组件被卸载前调用，可以在这里执行一些清理工作，比如清除组件中使用的定时器，清除componentDidMount中手动创建的DOM元素等，以避免引起内存泄漏。
 
 ## 8.脚手架
     create-react-app projectName
     装yarn
 
 ## 9.数据通信
-    fetch,async componentDidMount(){
+    fetch
+    async componentDidMount(){
         let data = await fetch('./data/data.json');
     }
 
@@ -68,7 +73,7 @@
             const store = createStore(reducer1)
     React-redux
         Provider
-            <Provider><App /></Provider>
+            <Provider store={store}><App /></Provider>
         connect
             export default connect((state,props)=>{
                 return state;
@@ -79,7 +84,7 @@
     2.store提取出来
         ...
     3.多个reducer，combineReducers
-        每次提交action都会把该组件相关联的reducer都执行
+        每次提交action都会把该组件相关联的reducer都执行 ^-^
 ## 2.React-router
     4.路由的基本使用
         npm install react-router-dom -S
