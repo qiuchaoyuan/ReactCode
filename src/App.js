@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Cmp1 from "./Cmp1"
 import Cmp2 from "./Cmp2"
+import { Button } from "antd"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -11,9 +12,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Router>
-          <Link  to="/">首页</Link>
-          <Link to="/news">新闻1</Link>
-          <Link to="/news">新闻2</Link>
+          <Link to="/">首页</Link>
+          <Link to="/news">新闻</Link>
 
           <Route path="/" exact component={Cmp1}></Route>
           <Route path="/news" exact component={Cmp2}></Route>

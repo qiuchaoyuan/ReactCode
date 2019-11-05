@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 import { Button } from "antd"
 import 'antd/dist/antd.css';
 import './cmp1.css'
+import { withRouter } from "react-router-dom";
 
 class Cmp1 extends Component {
     constructor(...arg) {
         super(...arg)
+        console.log(this.props.history)
     }
 
     fn() {
@@ -17,11 +19,16 @@ class Cmp1 extends Component {
     fn1() {
         this.props.setAge();
     }
+    
+    goToNews(){
+        this.props.history.push('/news')
+    }
 
     render() {
         return (
             <div>
                 我是cmp1
+                <Button onClick={this.goToNews.bind(this)}>走</Button>
                 {/* store里面的state和props糅合在一起，统一使用props管理，防止修改 */}
                 <div className="flex">
                     <Button type="primary" onClick={this.fn.bind(this)}>setName</Button>
@@ -54,4 +61,4 @@ const actions = {
 // 包装组件
 export default connect((state, props) => {
     return state;
-}, actions)(Cmp1)
+}, actions)(withRouter(Cmp1))
