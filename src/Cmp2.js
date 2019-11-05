@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {Button} from "antd";
-import {BrowserRouter as Router,Route,Link} from "react-router-dom";
+import {BrowserRouter as Router,Route,Link,withRouter} from "react-router-dom";
 import Cmp2_1 from "./Cmp2_1";
 import Cmp2_2 from "./Cmp2_2";
 
 class Cmp2 extends Component {
     constructor(...arg) {
         super(...arg)
+
+        console.log(this.props.history)
     };
 
     fn2() {
@@ -16,6 +18,10 @@ class Cmp2 extends Component {
 
     fn3() {
         this.props.setA();
+    }
+
+    goToIndex(){
+        this.props.history.push({pathname:'/',state:{a:'666'}})
     }
 
     componentDidUpdate(old_props, old_state) {
@@ -32,6 +38,8 @@ class Cmp2 extends Component {
 
         return (
             <div>
+                <Button onClick={this.goToIndex.bind(this)}>跳转</Button>
+
                 我是news{this.props.match.params.id}
                 <Router>
                     <Link to="/guoji">国际</Link>
@@ -70,4 +78,4 @@ const actions = {
 
 export default connect((state, props) => {
     return state;
-},actions)(Cmp2);
+},actions)(withRouter(Cmp2));

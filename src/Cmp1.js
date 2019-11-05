@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // 获取connect的内容
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom"
 import { Button } from "antd"
 import 'antd/dist/antd.css';
 import './cmp1.css'
